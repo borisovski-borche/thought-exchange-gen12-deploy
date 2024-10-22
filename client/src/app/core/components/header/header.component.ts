@@ -29,7 +29,7 @@ export class HeaderComponent {
 
   ngAfterViewInit() {
     this.renderer.listen(document, 'click', (e) => {
-      if (!this.dropdownEl().nativeElement.contains(e.target)) {
+      if (!this.dropdownEl()?.nativeElement.contains(e.target)) {
         this.isDropdownOpen.set(false);
       }
     });
