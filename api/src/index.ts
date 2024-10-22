@@ -21,6 +21,11 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.set("Content-Type", "text/html");
+  res.send(`<h1>Welcome to the thought exchange api</h1>`);
+});
+
 app.use("/api", globalRouter);
 
 app.use(errorHandler);
